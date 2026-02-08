@@ -1,6 +1,6 @@
 /**
  * @param {string} randomSnowflake
- * @param {`${number}`} NIL_SNOWFLAKE
+ * @param {`${bigint}`} NIL_SNOWFLAKE
  * @returns
  */
 export function getTests(randomSnowflake, NIL_SNOWFLAKE) {
