@@ -1,11 +1,11 @@
-import { randomSnowflake, snowflakeToDate } from "../build/index.js";
+import { generateSnowflake, snowflakeToDate } from "../build/index.js";
 
 async function generateSnowflakes() {
 	/** @returns {Snowflake} */
 	const snowflakes = [];
 	let date = Date.now();
 	for (let i = 0; i < 100; i++) {
-		snowflakes.push(randomSnowflake());
+		snowflakes.push(generateSnowflake());
 		await new Promise(res => setTimeout(res, 2));
 	}
 	return snowflakes;
@@ -13,9 +13,9 @@ async function generateSnowflakes() {
 
 describe("snowflakeToDate", () => {
 
-	test(`snowflakeToDate(randomSnowflake()).toEqual(Date.now())`, async () => {
+	test(`snowflakeToDate(generateSnowflake()).toEqual(Date.now())`, async () => {
 		const now = new Date();
-		const snowflake = randomSnowflake();
+		const snowflake = generateSnowflake();
 		const date = snowflakeToDate(snowflake);
 		expect(date).toEqual(now);
 	});

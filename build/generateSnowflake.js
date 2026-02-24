@@ -1,4 +1,4 @@
 import { DiscordSnowflake } from "@sapphire/snowflake";
-export function randomSnowflake(options) {
+export function generateSnowflake(options) {
     return DiscordSnowflake.generate(options).toString();
 }

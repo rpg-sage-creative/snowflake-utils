@@ -1,11 +1,11 @@
 import { tagLiterals } from "@rsc-utils/template-literal-utils";
-import { parseSnowflake, randomSnowflake } from "../build/index.js";
+import { parseSnowflake, generateSnowflake } from "../build/index.js";
 
 describe("parseSnowflake", () => {
 
 	const short = "123456789012345";
 	const min = "1234567890123456";
-	const id = randomSnowflake();
+	const id = generateSnowflake();
 	const channelId = `<#${id}>`;
 	const roleId = `<@&${id}>`;
 	const userId = `<@${id}>`;

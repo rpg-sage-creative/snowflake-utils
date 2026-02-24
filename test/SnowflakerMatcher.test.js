@@ -1,9 +1,9 @@
 import { tagLiterals } from "@rsc-utils/template-literal-utils";
-import { randomSnowflake, SnowflakeMatcher } from "../build/index.js";
+import { generateSnowflake, SnowflakeMatcher } from "../build/index.js";
 
 describe("SnowflakeMatcher", () => {
 
-	const snowflake = randomSnowflake();
+	const snowflake = generateSnowflake();
 	const matcher = new SnowflakeMatcher(snowflake);
 
 	const tests = [
