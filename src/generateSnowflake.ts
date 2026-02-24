@@ -7,3 +7,6 @@ type SnowflakeOptions = { timestamp?:bigint|Date|number; };
 export function generateSnowflake(options?: SnowflakeOptions): Snowflake {
 	return DiscordSnowflake.generate(options).toString() as Snowflake;
 }
+
+/** @deprecated use generateSnowflake() instead */
+export const randomSnowflake = generateSnowflake;
