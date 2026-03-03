@@ -8,8 +8,5 @@ const NilSnowflakeRegExp = /^0{16,}$/;
  * This accounts for possibly old data that incorrectly assumed a static length of a Snowflake and had a different length for NIL_SNOWFLAKE.
  */
 export function isNilSnowflake(value: Optional<string>): value is NIL_SNOWFLAKE {
-	if (value) {
-		return NilSnowflakeRegExp.test(value);
-	}
-	return false;
+	return typeof(value) === "string" && NilSnowflakeRegExp.test(value);
 }
